@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La gestació | Lydia Tello Oña</title>
+
+    <meta
+        name="description"
+        content="Treball sobre la gestació de Lydia Tello Oña."
+    >
+
+    <style>
+
+        /* =====================================================
+           CONFIGURACIÓ GENERAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f2ee;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           CAPÇALERA
+        ===================================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            background: rgba(244, 242, 238, 0.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #d9d6d0;
+        }
+
+        .nav {
+            max-width: 1250px;
+            margin: auto;
+
+            min-height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #a32929;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+
+            list-style: none;
+        }
+
+        .menu a {
+            position: relative;
+
+            font-size: 13px;
+            color: #555;
+
+            transition: color 0.25s ease;
+        }
+
+        .menu a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 1px;
+
+            background: #a32929;
+
+            transition: width 0.25s ease;
+        }
+
+        .menu a:hover {
+            color: #171717;
+        }
+
+        .menu a:hover::after,
+        .menu a.actiu::after {
+            width: 100%;
+        }
+
+        .menu a.actiu {
+            color: #171717;
+        }
+
+
+        /* =====================================================
+           PORTADA DE LA PÀGINA
+        ===================================================== */
+
+        .page-hero {
+            max-width: 1250px;
+            min-height: 72vh;
+
+            margin: auto;
+            padding: 100px 30px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .page-number {
+            margin-bottom: 25px;
+
+            color: #a32929;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .page-hero h1 {
+            max-width: 1000px;
+
+            font-size: clamp(65px, 11vw, 145px);
+
+            line-height: 0.84;
+            letter-spacing: -8px;
+
+            margin-bottom: 45px;
+        }
+
+        .page-hero h1 span {
+            display: block;
+            color: #a32929;
+        }
+
+        .page-intro {
+            max-width: 650px;
+
+            padding-left: 25px;
+
+            border-left: 2px solid #a32929;
+
+            font-size: 17px;
+            color: #666;
+        }
+
+
+        /* =====================================================
+           CONTENEDOR
+        ===================================================== */
+
+        .content {
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 0 30px 120px;
+        }
+
+
+        /* =====================================================
+           TÍTOLS DE SECCIÓ
+        ===================================================== */
+
+        .topic {
+            padding: 100px 0;
+
+            border-top: 1px solid #d2cfc8;
+        }
+
+        .topic-header {
+            display: grid;
+
+            grid-template-columns: 0.55fr 1.45fr;
+
+            gap: 60px;
+
+            margin-bottom: 60px;
+        }
+
+        .topic-number {
+            font-size: 12px;
+
+            color: #a32929;
+
+            letter-spacing: 2px;
+        }
+
+        .topic h2 {
+            font-size: clamp(40px, 6vw, 75px);
+
+            line-height: 0.95;
+
+            letter-spacing: -4px;
+        }
+
+
+        /* =====================================================
+           TEXT
+        ===================================================== */
+
+        .text-content {
+            max-width: 780px;
+
+            margin-left: auto;
+        }
+
+        .text-content p {
+            margin-bottom: 25px;
+
+            font-size: 16px;
+
+            color: #555;
+        }
+
+        .text-content p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* =====================================================
+           CAIXES DE DADES
+        ===================================================== */
+
+        .facts {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 1px;
+
+            margin-top: 55px;
+
+            background: #d2cfc8;
+            border: 1px solid #d2cfc8;
+        }
+
+        .fact {
+            min-height: 180px;
+
+            padding: 28px;
+
+            background: #f4f2ee;
+        }
+
+        .fact-number {
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: #a32929;
+
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .fact strong {
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 19px;
+        }
+
+        .fact p {
+            font-size: 13px;
+            color: #777;
+        }
+
+
+        /* =====================================================
+           DEFINICIONS
+        ===================================================== */
+
+        .definitions {
+            margin-top: 55px;
+
+            border-top: 1px solid #d2cfc8;
+        }
+
+        .definition {
+            display: grid;
+
+            grid-template-columns: 260px 1fr;
+
+            gap: 50px;
+
+            padding: 28px 0;
+
+            border-bottom: 1px solid #d2cfc8;
+        }
+
+        .definition h3 {
+            font-size: 18px;
+        }
+
+        .definition p {
+            max-width: 650px;
+
+            font-size: 14px;
+
+            color: #666;
+        }
+
+
+        /* =====================================================
+           ETAPES
+        ===================================================== */
+
+        .stages {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 1px;
+
+            margin-top: 55px;
+
+            background: #d2cfc8;
+        }
+
+        .stage {
+            padding: 40px;
+
+            background: #f4f2ee;
+        }
+
+        .stage-label {
+            display: inline-block;
+
+            margin-bottom: 30px;
+
+            padding-bottom: 8px;
+
+            border-bottom: 1px solid #a32929;
+
+            color: #a32929;
+
+            font-size: 11px;
+            letter-spacing: 1.5px;
+        }
+
+        .stage h3 {
+            margin-bottom: 18px;
+
+            font-size: 28px;
+
+            letter-spacing: -1px;
+        }
+
+        .stage p {
+            font-size: 14px;
+            color: #666;
+        }
+
+
+        /* =====================================================
+           PREMATURITAT
+        ===================================================== */
+
+        .highlight {
+            margin-top: 55px;
+
+            padding: 45px;
+
+            background: #171717;
+            color: white;
+        }
+
+        .highlight-label {
+            margin-bottom: 20px;
+
+            color: #d85c5c;
+
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .highlight h3 {
+            margin-bottom: 18px;
+
+            font-size: 35px;
+            line-height: 1;
+        }
+
+        .highlight p {
+            max-width: 750px;
+
+            font-size: 14px;
+
+            color: #aaa;
+        }
+
+
+        /* =====================================================
+           CANVIS FISIOLÒGICS
+        ===================================================== */
+
+        .systems {
+            margin-top: 60px;
+
+            border-top: 1px solid #d2cfc8;
+        }
+
+        .system {
+            display: grid;
+
+            grid-template-columns: 280px 1fr;
+
+            gap: 50px;
+
+            padding: 38px 0;
+
+            border-bottom: 1px solid #d2cfc8;
+        }
+
+        .system-title {
+            font-size: 22px;
+
+            font-weight: 600;
+        }
+
+        .system-title span {
+            display: block;
+
+            margin-top: 5px;
+
+            color: #a32929;
+
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .system ul {
+            list-style: none;
+        }
+
+        .system li {
+            position: relative;
+
+            margin-bottom: 12px;
+
+            padding-left: 18px;
+
+            font-size: 14px;
+
+            color: #666;
+        }
+
+        .system li:last-child {
+            margin-bottom: 0;
+        }
+
+        .system li::before {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 10px;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #a32929;
+        }
+
+
+        /* =====================================================
+           DADES IMPORTANTS
+        ===================================================== */
+
+        .important-data {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+
+            margin-top: 50px;
+        }
+
+        .important-box {
+            padding: 30px;
+
+            border: 1px solid #d2cfc8;
+
+            background: #ebe8e2;
+        }
+
+        .important-box strong {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 15px;
+        }
+
+        .important-box span {
+            color: #a32929;
+
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           PEU DE PÀGINA
+        ===================================================== */
+
+        .back-section {
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 70px 30px;
+
+            border-top: 1px solid #d2cfc8;
+        }
+
+        .back-button {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 15px;
+
+            padding: 14px 20px;
+
+            background: #171717;
+            color: white;
+
+            font-size: 13px;
+
+            transition: all 0.25s ease;
+        }
+
+        .back-button:hover {
+            background: #a32929;
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #171717;
+
+            color: white;
+
+            padding: 35px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-name {
+            font-size: 13px;
+        }
+
+        .footer-right {
+            font-size: 11px;
+            color: #888;
+        }
+
+
+        /* =====================================================
+           ANIMACIÓ
+        ===================================================== */
+
+        .fade {
+            animation: aparicio 0.8s ease forwards;
+        }
+
+        @keyframes aparicio {
+
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .menu {
+                gap: 15px;
+            }
+
+            .menu a {
+                font-size: 11px;
+            }
+
+            .topic-header {
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+            .facts {
+                grid-template-columns: 1fr;
+            }
+
+            .definition {
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+            }
+
+            .system {
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav {
+                min-height: 65px;
+
+                padding: 0 18px;
+            }
+
+            .logo {
+                font-size: 15px;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .page-hero {
+                min-height: 65vh;
+
+                padding: 70px 20px;
+            }
+
+            .page-hero h1 {
+                font-size: 65px;
+
+                letter-spacing: -4px;
+            }
+
+            .page-intro {
+                font-size: 15px;
+            }
+
+            .content {
+                padding: 0 20px 80px;
+            }
+
+            .topic {
+                padding: 75px 0;
+            }
+
+            .topic h2 {
+                font-size: 45px;
+            }
+
+            .stage {
+                padding: 28px;
+            }
+
+            .stages {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight {
+                padding: 30px;
+            }
+
+            .important-data {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CAPÇALERA
+    ===================================================== -->
+
+    <header>
+
+        <nav class="nav">
+
+            <a href="index.html" class="logo">
+                LYDIA <span>TELLO OÑA</span>
+            </a>
+
+
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">
+                        Inici
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gestacio.html" class="actiu">
+                        Gestació
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#formacio">
+                        Formació
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#material">
+                        Material
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#experiencies">
+                        Experiències
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#sobre-mi">
+                        Sobre mi
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PORTADA
+    ===================================================== -->
+
+    <section class="page-hero fade">
+
+        <p class="page-number">
+            M2 · UF2 · TEMA 1
+        </p>
+
+
+        <h1>
+            La
+            <span>gestació.</span>
+        </h1>
+
+
+        <p class="page-intro">
+
+            Treball sobre el cicle menstrual, la gestació,
+            les etapes de l'embaràs i els principals canvis
+            fisiològics que es produeixen durant aquest període.
+
+        </p>
+
+    </section>
+
+
+
+    <main class="content">
+
+
+        <!-- =================================================
+             CICLE MENSTRUAL
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        01 / CICLE MENSTRUAL
+                    </p>
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        El cicle
+                        menstrual.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-content">
+
+                <p>
+                    El cicle menstrual femení és de 28 dies.
+                    Es considera dia 1 el dia que comença
+                    la menstruació.
+                </p>
+
+                <p>
+                    Al voltant del dia 14 del cicle es produeix
+                    l'ovulació. L'òvul viurà aproximadament 48
+                    hores a l'espera de ser fecundat.
+                </p>
+
+                <p>
+                    És a la meitat del cicle quan la dona és
+                    més fèrtil. Pot quedar embarassada fins a
+                    5 dies abans de l'ovulació, ja que els
+                    espermatozoides poden viure dins del cos
+                    de la dona entre 3 i 5 dies.
+                </p>
+
+                <p>
+                    Si l'òvul no és fecundat, sortirà juntament
+                    amb l'endometri amb el que es coneix com
+                    a menstruació.
+                </p>
+
+            </div>
+
+
+            <div class="facts">
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        01
+                    </span>
+
+                    <strong>
+                        28 dies
+                    </strong>
+
+                    <p>
+                        Durada aproximada del cicle menstrual.
+                    </p>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        02
+                    </span>
+
+                    <strong>
+                        Dia 14
+                    </strong>
+
+                    <p>
+                        Moment aproximat en què es produeix
+                        l'ovulació.
+                    </p>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        03
+                    </span>
+
+                    <strong>
+                        48 hores
+                    </strong>
+
+                    <p>
+                        Temps aproximat de vida de l'òvul
+                        després de l'ovulació.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ALTERACIONS
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        02 / ALTERACIONS
+                    </p>
+                </div>
+
+                <div>
+
+                    <h2>
+                        Alteracions
+                        menstruals.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="definitions">
+
+
+                <div class="definition">
+
+                    <h3>
+                        Hipermenorrea
+                    </h3>
+
+                    <p>
+                        Hemorràgia excessiva o prolongada
+                        de la menstruació, de més de 8 dies.
+                    </p>
+
+                </div>
+
+
+                <div class="definition">
+
+                    <h3>
+                        Hipomenorrea
+                    </h3>
+
+                    <p>
+                        Hemorràgia escassa o de poca duració,
+                        inferior a 3 dies.
+                    </p>
+
+                </div>
+
+
+                <div class="definition">
+
+                    <h3>
+                        Metrorràgia
+                    </h3>
+
+                    <p>
+                        Hemorràgia sense relació amb el cicle
+                        menstrual, en menopausa o en menarquia.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GESTACIÓ
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        03 / GESTACIÓ
+                    </p>
+                </div>
+
+                <div>
+
+                    <h2>
+                        L'inici
+                        de la vida.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-content">
+
+                <p>
+                    La vida humana comença en el moment exacte
+                    de la unió de l'òvul i l'espermatozou, és a dir,
+                    la fecundació.
+                </p>
+
+                <p>
+                    La fecundació sol produir-se a les trompes
+                    de Fal·lopi. Des d'aquí, el zigot inicia un
+                    viatge d'aproximadament 5 dies fins a l'úter
+                    matern, on trobarà les condicions necessàries
+                    per al seu desenvolupament.
+                </p>
+
+                <p>
+                    L'embaràs és el període des de la fecundació
+                    de l'òvul fins al part.
+                </p>
+
+            </div>
+
+
+            <div class="facts">
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        DURADA
+                    </span>
+
+                    <strong>
+                        270–280 dies
+                    </strong>
+
+                    <p>
+                        Durada aproximada del període de gestació.
+                    </p>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        SETMANES
+                    </span>
+
+                    <strong>
+                        38–40
+                    </strong>
+
+                    <p>
+                        Durada habitual de la gestació humana.
+                    </p>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        A TERME
+                    </span>
+
+                    <strong>
+                        37–42 setmanes
+                    </strong>
+
+                    <p>
+                        Interval considerat gestació a terme.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ETAPES
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        04 / ETAPES
+                    </p>
+                </div>
+
+                <div>
+
+                    <h2>
+                        De l'embrió
+                        al fetus.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="stages">
+
+
+                <div class="stage">
+
+                    <span class="stage-label">
+                        PRIMERA ETAPA
+                    </span>
+
+                    <h3>
+                        Embrió
+                    </h3>
+
+                    <p>
+                        Durant les primeres 8 setmanes,
+                        el nou ésser rep el nom d'embrió.
+                        Durant aquest període es va desenvolupant
+                        fins a aconseguir una morfologia
+                        clarament humana.
+                    </p>
+
+                </div>
+
+
+                <div class="stage">
+
+                    <span class="stage-label">
+                        SEGONA ETAPA
+                    </span>
+
+                    <h3>
+                        Fetus
+                    </h3>
+
+                    <p>
+                        Des de la novena setmana fins al part,
+                        el nou ésser s'anomena fetus. Es
+                        desenvolupen i maduren els òrgans interns,
+                        creix i augmenta de pes fins arribar,
+                        aproximadament, als 3,5 kg al part a terme.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GESTACIÓ A TERME
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        05 / FINAL DE LA GESTACIÓ
+                    </p>
+                </div>
+
+                <div>
+
+                    <h2>
+                        Gestació
+                        a terme.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-content">
+
+                <p>
+                    Al final de la gestació maduren els teixits
+                    pulmonars del fetus i es crea una capa de
+                    teixit adipós per preparar-lo per a la sortida
+                    del ventre matern.
+                </p>
+
+                <p>
+                    Durant les últimes setmanes el fetus s'anirà
+                    col·locant en posició cefàlica de sortida i,
+                    conforme s'acosta el dia, anirà fixant el seu
+                    cap a la base del sòl pèlvic.
+                </p>
+
+                <p>
+                    Les darreres setmanes de gestació són molt
+                    pesades per a la futura mare, ja que el fetus
+                    és molt gran i dificulta qualsevol moviment.
+                </p>
+
+            </div>
+
+
+            <div class="facts">
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        SETMANES
+                    </span>
+
+                    <strong>
+                        38–42
+                    </strong>
+
+                    <p>
+                        Interval indicat en el document per al
+                        moment del part.
+                    </p>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        LONGITUD
+                    </span>
+
+                    <strong>
+                        48–52 cm
+                    </strong>
+
+                    <p>
+                        Mesura aproximada del fetus al moment
+                        del part.
+                    </p>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        PES
+                    </span>
+
+                    <strong>
+                        2,7–4 kg
+                    </strong>
+
+                    <p>
+                        Pes aproximat al moment del part.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PREMATURITAT
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        06 / PREMATURITAT
+                    </p>
+                </div>
+
+                <div>
+
+                    <h2>
+                        Quan el part
+                        s'avança.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <p class="highlight-label">
+                    INFORMACIÓ DEL TEMA
+                </p>
+
+                <h3>
+                    Part prematur
+                </h3>
+
+                <p>
+                    Es consideren nens prematurs els nens nascuts
+                    abans de la setmana 37 de gestació. Quan el
+                    part es posa en marxa abans d'hora, l'obstetra
+                    valora la possibilitat de retardar al màxim
+                    el moment del part per tal de forçar la
+                    maduració del fetus.
+                </p>
+
+                <br>
+
+                <p>
+                    Actualment sobreviuen nens nascuts amb
+                    24 i 25 setmanes de gestació.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EDAT GESTACIONAL
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        07 / CÀLCUL
+                    </p>
+                </div>
+
+                <div>
+
+                    <h2>
+                        Edat gestacional
+                        i DPP.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="definitions">
+
+
+                <div class="definition">
+
+                    <h3>
+                        Edat gestacional
+                    </h3>
+
+                    <p>
+                        Edat, en setmanes, de l'embrió o fetus
+                        comptada des del primer dia de l'última
+                        menstruació.
+                    </p>
+
+                </div>
+
+
+                <div class="definition">
+
+                    <h3>
+                        Data probable del part
+                    </h3>
+
+                    <p>
+                        DPP: data de l'última regla (DUR)
+                        menys 3 mesos més 7 dies.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="important-data">
+
+                <div class="important-box">
+
+                    <strong>
+                        Edat gestacional
+                    </strong>
+
+                    <span>
+                        Setmanes
+                    </span>
+
+                </div>
+
+
+                <div class="important-box">
+
+                    <strong>
+                        Data probable del part
+                    </strong>
+
+                    <span>
+                        DUR − 3 mesos + 7 dies
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CANVIS FISIOLÒGICS
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        08 / CANVIS FISIOLÒGICS
+                    </p>
+                </div>
+
+                <div>
+
+                    <h2>
+                        El cos durant
+                        la gestació.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-content">
+
+                <p>
+                    Per anar donant lloc al fetus en creixement,
+                    el cos de la dona experimenta canvis
+                    anatomofisiològics en les seves estructures
+                    bàsiques que s'hauran de tenir presents en
+                    l'avaluació i el tractament.
+                </p>
+
+            </div>
+
+
+            <div class="systems">
+
+
+                <!-- RESPIRATORI -->
+
+                <div class="system">
+
+                    <div class="system-title">
+
+                        Respiratori
+
+                        <span>
+                            SISTEMA 01
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Augment de la ventilació i augment de la FR.
+                        </li>
+
+                        <li>
+                            Consum d'O₂ augmentat.
+                        </li>
+
+                        <li>
+                            Elevació del diafragma.
+                        </li>
+
+                        <li>
+                            Disminució de la capacitat pulmonar.
+                        </li>
+
+                        <li>
+                            Si hi ha pneumotòrax a tensió,
+                            el drenatge es realitza 1–2 espais
+                            més amunt.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- CIRCULATORI -->
+
+                <div class="system">
+
+                    <div class="system-title">
+
+                        Circulatori
+
+                        <span>
+                            SISTEMA 02
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            A partir de les 20 setmanes,
+                            el decúbit supí disminueix el retorn venós.
+                        </li>
+
+                        <li>
+                            A les 28 setmanes l'increment del
+                            volum sanguini és del 50%.
+                        </li>
+
+                        <li>
+                            Augment de la freqüència cardíaca
+                            entre 15 i 20 batecs més per minut.
+                        </li>
+
+                        <li>
+                            Disminució de la tensió arterial
+                            en 15 mmHg.
+                        </li>
+
+                        <li>
+                            El xoc matern té una taxa de mortalitat
+                            del fetus del 80%.
+                        </li>
+
+                        <li>
+                            Una hemorràgia del 30–35% del volum
+                            sanguini no dona símptomes materns.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- DIGESTIU -->
+
+                <div class="system">
+
+                    <div class="system-title">
+
+                        Digestiu
+
+                        <span>
+                            SISTEMA 03
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Més difícil de valorar possibles
+                            lesions i/o signes abdominals.
+                        </li>
+
+                        <li>
+                            Els budells es desplacen a la part
+                            superior de l'abdomen per l'augment
+                            de la mida uterina.
+                        </li>
+
+                        <li>
+                            Disminució de la motilitat gàstrica,
+                            buidat gàstric lent i aparició de
+                            reflux gastroesofàgic.
+                        </li>
+
+                        <li>
+                            Obliga a menjar cada poques hores,
+                            però molt poca quantitat d'aliment.
+                        </li>
+
+                        <li>
+                            A partir del 6è mes s'ha de considerar
+                            sempre l'estómac ple i considerar SNG.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- LOCOMOTOR -->
+
+                <div class="system">
+
+                    <div class="system-title">
+
+                        Locomotor
+
+                        <span>
+                            SISTEMA 04
+                        </span>
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            A partir del 7è mes s'inicia
+                            l'obertura de la pelvis per anar
+                            preparant el canal del part.
+                        </li>
+
+                        <li>
+                            Es produeix una laxitud a nivell
+                            articular, que pot donar dolors
+                            articulars sense traumatisme previ.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CANVIS EN EL FETUS
+        ================================================== -->
+
+        <section class="topic">
+
+            <div class="topic-header">
+
+                <div>
+                    <p class="topic-number">
+                        09 / EVOLUCIÓ
+                    </p>
+                </div>
+
+                <div>
+
+                    <h2>
+                        Evolució del
+                        fetus.
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="facts">
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        12 SETMANES
+                    </span>
+
+                    <strong>
+                        Úter intrapèlvic
+                    </strong>
+
+                    <p>
+                        A les 12 setmanes de gestació,
+                        l'úter és intrapèlvic.
+                    </p>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        20 SETMANES
+                    </span>
+
+                    <strong>
+                        Canvis anatòmics
+                    </strong>
+
+                    <p>
+                        El document destaca els canvis
+                        relacionats amb la zona umbilical.
+                    </p>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span class="fact-number">
+                        FINAL
+                    </span>
+
+                    <strong>
+                        Posició cefàlica
+                    </strong>
+
+                    <p>
+                        El fetus s'encaixa a la pelvis,
+                        descendeix i es col·loca en posició
+                        cefàlica de sortida.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         TORNAR
+    ===================================================== -->
+
+    <div class="back-section">
+
+        <a href="index.html" class="back-button">
+
+            ← Tornar al portafoli
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-name">
+                Lydia Tello Oña
+            </div>
+
+            <div class="footer-right">
+                M2 · UF2 · La gestació · JOVIAT · Manresa
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

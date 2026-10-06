@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lydia Tello Oña | Portafoli</title>
+
+    <meta name="description" content="Portafoli personal i acadèmic de Lydia Tello Oña, estudiant d'Emergències Sanitàries a JOVIAT Manresa.">
+
+    <style>
+
+        /* =====================================================
+           CONFIGURACIÓ GENERAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f2ee;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =====================================================
+           CAPÇALERA
+        ===================================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            background: rgba(244, 242, 238, 0.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #d9d6d0;
+        }
+
+        .nav {
+            max-width: 1250px;
+            margin: auto;
+
+            min-height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #a32929;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .menu a {
+            position: relative;
+
+            font-size: 13px;
+            color: #555;
+
+            transition: color 0.25s ease;
+        }
+
+        .menu a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 1px;
+
+            background: #a32929;
+
+            transition: width 0.25s ease;
+        }
+
+        .menu a:hover {
+            color: #171717;
+        }
+
+        .menu a:hover::after,
+        .menu a.actiu::after {
+            width: 100%;
+        }
+
+        .menu a.actiu {
+            color: #171717;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            max-width: 1250px;
+            min-height: calc(100vh - 78px);
+
+            margin: auto;
+            padding: 70px 30px;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .small-title {
+            margin-bottom: 20px;
+
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #a32929;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.9;
+
+            letter-spacing: -6px;
+
+            font-weight: 700;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #a32929;
+        }
+
+        .hero-description {
+            max-width: 570px;
+
+            font-size: 17px;
+            line-height: 1.7;
+
+            color: #555;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-info {
+            display: flex;
+            gap: 35px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #d4d1ca;
+        }
+
+        .hero-info div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-info strong {
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+
+        .hero-info span {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 620px;
+
+            object-fit: cover;
+
+            background: #ddd9d2;
+        }
+
+        .image-label {
+            position: absolute;
+
+            bottom: 18px;
+            left: 18px;
+
+            padding: 8px 12px;
+
+            background: rgba(255, 255, 255, 0.9);
+
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        /* =====================================================
+           BOTÓ
+        ===================================================== */
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+
+            padding: 14px 20px;
+
+            background: #171717;
+            color: white;
+
+            font-size: 13px;
+
+            transition: all 0.25s ease;
+        }
+
+        .button:hover {
+            background: #a32929;
+            transform: translateY(-2px);
+        }
+
+        .arrow {
+            font-size: 17px;
+        }
+
+        /* =====================================================
+           SECCIONS
+        ===================================================== */
+
+        section {
+            max-width: 1250px;
+            margin: auto;
+
+            padding: 120px 30px;
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 60px;
+
+            margin-bottom: 70px;
+        }
+
+        .section-number {
+            font-size: 12px;
+            color: #a32929;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: clamp(35px, 5vw, 65px);
+            line-height: 1;
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+        }
+
+        .section-text {
+            max-width: 650px;
+
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =====================================================
+           QUI SOC
+        ===================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+        .about-main {
+            font-size: 25px;
+            line-height: 1.4;
+
+            letter-spacing: -0.5px;
+        }
+
+        .about-main strong {
+            color: #a32929;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 35px;
+        }
+
+        .detail {
+            border-top: 1px solid #d2cfc8;
+            padding-top: 15px;
+        }
+
+        .detail h3 {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .detail p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* =====================================================
+           FORMACIÓ
+        ===================================================== */
+
+        .formation {
+            border-top: 1px solid #d2cfc8;
+        }
+
+        .formation-row {
+            display: grid;
+            grid-template-columns: 0.5fr 1.5fr 1fr;
+
+            gap: 30px;
+
+            padding: 30px 0;
+
+            border-bottom: 1px solid #d2cfc8;
+
+            transition: padding 0.25s ease;
+        }
+
+        .formation-row:hover {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .formation-year {
+            font-size: 12px;
+            color: #a32929;
+        }
+
+        .formation-name {
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .formation-place {
+            font-size: 13px;
+            color: #777;
+            text-align: right;
+        }
+
+        /* =====================================================
+           OLESA
+        ===================================================== */
+
+        .place-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .place-image img {
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+
+            background: #ddd9d2;
+        }
+
+        .place-content h3 {
+            font-size: 40px;
+            line-height: 1;
+
+            margin-bottom: 25px;
+
+            letter-spacing: -2px;
+        }
+
+        .place-content p {
+            color: #666;
+            font-size: 15px;
+
+            max-width: 500px;
+        }
+
+        /* =====================================================
+           YAMAHA
+        ===================================================== */
+
+        .motorcycle {
+            background: #171717;
+            color: white;
+
+            max-width: none;
+        }
+
+        .motorcycle-inner {
+            max-width: 1250px;
+            margin: auto;
+
+            padding: 120px 30px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .motorcycle .section-number {
+            color: #d85c5c;
+        }
+
+        .motorcycle h2 {
+            font-size: clamp(40px, 6vw, 75px);
+            line-height: 0.95;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 30px;
+        }
+
+        .motorcycle p {
+            max-width: 520px;
+
+            color: #aaa;
+
+            font-size: 15px;
+        }
+
+        .bike-image img {
+            width: 100%;
+            height: 520px;
+
+            object-fit: cover;
+
+            background: #292929;
+        }
+
+        /* =====================================================
+           PORTAFOLI
+        ===================================================== */
+
+        .portfolio-list {
+            border-top: 1px solid #d2cfc8;
+        }
+
+        .portfolio-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 80px;
+
+            align-items: center;
+
+            gap: 30px;
+
+            padding: 28px 0;
+
+            border-bottom: 1px solid #d2cfc8;
+
+            transition: all 0.25s ease;
+        }
+
+        .portfolio-item:hover {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .portfolio-number {
+            font-size: 12px;
+            color: #a32929;
+        }
+
+        .portfolio-name {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .portfolio-description {
+            font-size: 12px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        .portfolio-arrow {
+            font-size: 22px;
+            text-align: right;
+        }
+
+        /* =====================================================
+           FINAL
+        ===================================================== */
+
+        .closing {
+            min-height: 70vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+
+            border-top: 1px solid #d2cfc8;
+        }
+
+        .closing-small {
+            color: #a32929;
+
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .closing h2 {
+            max-width: 900px;
+
+            font-size: clamp(45px, 7vw, 90px);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #171717;
+            color: white;
+
+            padding: 35px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1250px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-name {
+            font-size: 13px;
+        }
+
+        .footer-right {
+            font-size: 11px;
+            color: #888;
+        }
+
+        /* =====================================================
+           ANIMACIONS
+        ===================================================== */
+
+        .fade {
+            animation: aparicio 0.9s ease forwards;
+        }
+
+        @keyframes aparicio {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .menu {
+                gap: 15px;
+            }
+
+            .menu a {
+                font-size: 11px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-image {
+                max-width: 650px;
+            }
+
+            .hero-image img {
+                height: 500px;
+            }
+
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .place-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .motorcycle-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .formation-row {
+                grid-template-columns: 100px 1fr;
+            }
+
+            .formation-place {
+                grid-column: 2;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .nav {
+                min-height: 65px;
+                padding: 0 18px;
+            }
+
+            .logo {
+                font-size: 15px;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+                letter-spacing: -4px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-info {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .section-title {
+                font-size: 43px;
+            }
+
+            .about-details {
+                grid-template-columns: 1fr;
+            }
+
+            .formation-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .formation-place {
+                grid-column: auto;
+            }
+
+            .place-image img,
+            .bike-image img {
+                height: 380px;
+            }
+
+            .motorcycle-inner {
+                padding: 80px 20px;
+            }
+
+            .portfolio-item {
+                grid-template-columns: 40px 1fr 30px;
+                gap: 10px;
+            }
+
+            .portfolio-name {
+                font-size: 18px;
+            }
+
+            .closing h2 {
+                font-size: 52px;
+                letter-spacing: -3px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CAPÇALERA
+    ===================================================== -->
+
+    <header>
+
+        <nav class="nav">
+
+            <a href="index.html" class="logo">
+                LYDIA <span>TELLO OÑA</span>
+            </a>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html" class="actiu">
+                        Inici
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gestacio.html">
+                        Gestació
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#formacio">
+                        Formació
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#material">
+                        Material
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#experiencies">
+                        Experiències
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#sobre-mi">
+                        Sobre mi
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PORTADA
+    ===================================================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text fade">
+
+                <p class="small-title">
+                    Portafoli · Emergències Sanitàries
+                </p>
+
+                <h1>
+                    Lydia
+                    <span>Tello Oña</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Estudiant del CFGM d'Emergències Sanitàries,
+                    amb ganes de continuar aprenent i adquirir
+                    experiència dins de l'àmbit sanitari i de les
+                    emergències.
+
+                </p>
+
+                <a href="#qui-soc" class="button">
+
+                    Descobrir el portafoli
+
+                    <span class="arrow">→</span>
+
+                </a>
+
+                <div class="hero-info">
+
+                    <div>
+                        <strong>Formació</strong>
+                        <span>CFGM Emergències Sanitàries</span>
+                    </div>
+
+                    <div>
+                        <strong>Centre</strong>
+                        <span>JOVIAT · Manresa</span>
+                    </div>
+
+                    <div>
+                        <strong>Origen</strong>
+                        <span>Olesa de Montserrat</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-image fade">
+
+                <!--
+                    POSA AQUÍ LA TEVA FOTO.
+
+                    La imatge ha d'estar dins d'una carpeta
+                    anomenada "images".
+
+                    Exemple:
+                    images/lydia.jpg
+                -->
+
+                <img
+                    src="images/lydia.jpg"
+                    alt="Fotografia de Lydia Tello Oña"
+                >
+
+                <div class="image-label">
+                    Lydia Tello Oña · 2026
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUI SOC
+        ================================================== -->
+
+        <section id="qui-soc">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-number">01 / QUI SOC</p>
+                </div>
+
+                <div>
+
+                    <h2 class="section-title">
+                        Una mica<br>
+                        sobre mi.
+                    </h2>
+
+                    <p class="section-text">
+
+                        Aquest portafoli recull la meva formació,
+                        els coneixements que vaig adquirint i
+                        diferents experiències relacionades amb
+                        el món de les emergències sanitàries.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="about-main">
+
+                    Soc la <strong>Lydia Tello Oña</strong>,
+                    estudiant d'Emergències Sanitàries a JOVIAT,
+                    a Manresa.
+
+                </div>
+
+
+                <div class="about-details">
+
+                    <div class="detail">
+
+                        <h3>Nom</h3>
+
+                        <p>
+                            Lydia Tello Oña
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <h3>Estudis</h3>
+
+                        <p>
+                            CFGM Emergències Sanitàries
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <h3>Centre educatiu</h3>
+
+                        <p>
+                            JOVIAT · Manresa
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <h3>Població</h3>
+
+                        <p>
+                            Olesa de Montserrat
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FORMACIÓ
+        ================================================== -->
+
+        <section id="formacio">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-number">02 / FORMACIÓ</p>
+                </div>
+
+                <div>
+
+                    <h2 class="section-title">
+                        El meu<br>
+                        recorregut.
+                    </h2>
+
+                    <p class="section-text">
+
+                        La meva formació està enfocada al sector
+                        de les emergències sanitàries i a la
+                        preparació necessària per desenvolupar-me
+                        professionalment en aquest àmbit.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="formation">
+
+                <div class="formation-row">
+
+                    <div class="formation-year">
+                        ACTUAL
+                    </div>
+
+                    <div class="formation-name">
+                        CFGM Emergències Sanitàries
+                    </div>
+
+                    <div class="formation-place">
+                        JOVIAT · Manresa
+                    </div>
+
+                </div>
+
+
+                <div class="formation-row">
+
+                    <div class="formation-year">
+                        FORMACIÓ
+                    </div>
+
+                    <div class="formation-name">
+                        Coneixements sanitaris
+                    </div>
+
+                    <div class="formation-place">
+                        Procediments i material sanitari
+                    </div>
+
+                </div>
+
+
+                <div class="formation-row">
+
+                    <div class="formation-year">
+                        OBJECTIU
+                    </div>
+
+                    <div class="formation-name">
+                        Preparació professional
+                    </div>
+
+                    <div class="formation-place">
+                        Àmbit de les emergències
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             OLESA
+        ================================================== -->
+
+        <section>
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-number">03 / ORIGEN</p>
+                </div>
+
+                <div>
+
+                    <h2 class="section-title">
+                        Olesa de<br>
+                        Montserrat.
+                    </h2>
+
+                    <p class="section-text">
+
+                        El meu dia a dia parteix d'Olesa de
+                        Montserrat, mentre que la meva formació
+                        professional es desenvolupa a Manresa.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="place-grid">
+
+                <div class="place-image">
+
+                    <img
+                        src="images/olesa.jpg"
+                        alt="Olesa de Montserrat"
+                    >
+
+                </div>
+
+
+                <div class="place-content">
+
+                    <h3>
+                        D'on vinc.
+                    </h3>
+
+                    <p>
+
+                        Olesa de Montserrat és el lloc on visc
+                        i forma part de la meva identitat personal.
+                        Des d'allà em desplaço fins a Manresa per
+                        continuar la meva formació a JOVIAT.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SOBRE MI / YAMAHA
+        ================================================== -->
+
+        <div class="motorcycle" id="sobre-mi">
+
+            <div class="motorcycle-inner">
+
+                <div>
+
+                    <p class="section-number">
+                        04 / SOBRE MI
+                    </p>
+
+                    <h2>
+                        Més enllà<br>
+                        dels estudis.
+                    </h2>
+
+                    <p>
+
+                        Una de les meves aficions són les motos.
+                        Actualment tinc una Yamaha YZF125, que forma
+                        part del meu temps lliure i dels meus
+                        interessos personals.
+
+                    </p>
+
+                </div>
+
+
+                <div class="bike-image">
+
+                    <img
+                        src="images/yamaha.jpg"
+                        alt="Yamaha YZF125 de Lydia"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PORTAFOLI
+        ================================================== -->
+
+        <section id="material">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-number">05 / PORTAFOLI</p>
+                </div>
+
+                <div>
+
+                    <h2 class="section-title">
+                        El que<br>
+                        estic aprenent.
+                    </h2>
+
+                    <p class="section-text">
+
+                        En aquest apartat aniré incorporant
+                        treballs, activitats, materials i
+                        experiències relacionades amb la meva
+                        formació.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-list">
+
+
+                <a href="gestacio.html" class="portfolio-item">
+
+                    <div class="portfolio-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <div class="portfolio-name">
+                            Gestació
+                        </div>
+
+                        <div class="portfolio-description">
+                            Treball i contingut de la gestació
+                        </div>
+
+                    </div>
+
+                    <div class="portfolio-arrow">
+                        →
+                    </div>
+
+                </a>
+
+
+                <a href="#material" class="portfolio-item">
+
+                    <div class="portfolio-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <div class="portfolio-name">
+                            Material sanitari
+                        </div>
+
+                        <div class="portfolio-description">
+                            Instruments i material d'emergències
+                        </div>
+
+                    </div>
+
+                    <div class="portfolio-arrow">
+                        →
+                    </div>
+
+                </a>
+
+
+                <a href="#experiencies" class="portfolio-item">
+
+                    <div class="portfolio-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <div class="portfolio-name">
+                            Experiències
+                        </div>
+
+                        <div class="portfolio-description">
+                            Pràctiques, activitats i projectes
+                        </div>
+
+                    </div>
+
+                    <div class="portfolio-arrow">
+                        →
+                    </div>
+
+                </a>
+
+
+                <a href="#sobre-mi" class="portfolio-item">
+
+                    <div class="portfolio-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <div class="portfolio-name">
+                            Sobre mi
+                        </div>
+
+                        <div class="portfolio-description">
+                            Interessos i aficions personals
+                        </div>
+
+                    </div>
+
+                    <div class="portfolio-arrow">
+                        →
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EXPERIÈNCIES
+        ================================================== -->
+
+       
+
+
+        <!-- =================================================
+             FINAL
+        ================================================== -->
+
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-name">
+                Lydia Tello Oña
+            </div>
+
+            <div class="footer-right">
+                CFGM Emergències Sanitàries · JOVIAT · Manresa
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+</body>
+</html>
